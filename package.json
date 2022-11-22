@@ -23,7 +23,8 @@
     "react-tooltip": "^4.5.0",
     "sass": "^1.56.1",
     "stream-browserify": "^3.0.0",
-    "util": "^0.12.4"
+    "util": "^0.12.4",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@types/react": "^18.0.24",

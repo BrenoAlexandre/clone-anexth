@@ -1,0 +1,171 @@
+@import '../../../../exports.module';
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardTitle {
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 1.6rem;
+
+  margin: 0;
+
+  text-align: center;
+  text-transform: uppercase;
+
+  color: var(--primary-color);
+}
+
+.cardDescription {
+  max-width: 34.3rem;
+
+  font-weight: 300;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+  text-align: center;
+
+  color: var(--primary-grey);
+}
+
+.modal {
+  width: 45rem;
+
+  position: relative !important;
+  top: 50% !important;
+  left: 49.5% !important;
+  transform: translate(-50%, -50%) !important;
+
+  padding: 1.1rem;
+
+  background-color: var(--background-color);
+
+  border-radius: 0.4rem;
+
+  box-shadow: 0px 4px 10px var(--lighter-shadow);
+
+  &__content {
+    @extend .flex;
+
+    padding: 1rem 4.8rem;
+
+    h3 {
+      font-weight: 500;
+      font-size: 1.6rem;
+      line-height: 1.9rem;
+      text-align: center;
+
+      color: var(--primary-grey);
+    }
+
+    .patientInfo {
+      @extend .flex;
+      text-align: center;
+
+      gap: 0.4rem;
+
+      .name {
+        font-weight: 700;
+        font-size: 26px;
+        line-height: 22px;
+
+        margin: 0.5rem 0;
+
+        display: flex;
+        align-items: center;
+        text-align: center;
+
+        color: var(--tertiary-color);
+      }
+
+      .email {
+        font-weight: 500;
+        font-size: 1.6rem;
+        line-height: 1.9rem;
+
+        margin: 0.5rem 0;
+
+        display: flex;
+        align-items: center;
+        text-align: center;
+
+        color: var(--tertiary-color);
+      }
+
+      .phoneNumber {
+        font-weight: 500;
+        font-size: 1.6rem;
+        line-height: 1.9rem;
+
+        margin: 0.5rem 0 0;
+
+        display: flex;
+        align-items: center;
+        text-align: center;
+
+        color: var(--tertiary-color);
+      }
+    }
+
+    .confirmationMessage {
+      padding: 2rem;
+
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 19px;
+      text-align: center;
+
+      color: var(--primary-grey);
+    }
+
+    button {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 1.5rem 3.2rem;
+
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 16px;
+      text-align: center;
+      text-transform: uppercase;
+
+      color: var(--background-color);
+      background: var(--primary-color);
+
+      border: none;
+      border-radius: 0.3rem;
+
+      box-shadow: 2px 2px 6px var(--light-shadow);
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &:action {
+        transform: scale(0.98);
+        background: var(--dark-primary);
+      }
+    }
+
+    .editInfo {
+      width: fit-content;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 16px;
+
+      text-align: end;
+
+      padding: 0.8rem 0 0 0;
+
+      color: var(--secondary-color);
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

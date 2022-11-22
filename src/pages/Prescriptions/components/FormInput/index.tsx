@@ -1,6 +1,6 @@
 import React from 'react';
-import Tooltip from '@mui/material/Tooltip';
 import style from './style.module.scss';
+import ErrorTooltip from '../../../../components/ErrorToolTip';
 
 interface IProps {
   error: string | null;
@@ -13,36 +13,16 @@ interface IProps {
   options?: string[];
 }
 
-const FormInput = ({
-  error,
-  placeholder,
-  name,
-  onChange,
-  onBlur,
-  value,
-  type,
-  options,
-}: IProps) => {
+const FormInput = ({ error, options, ...props }: IProps) => {
   return (
-    <Tooltip title={error} placement='top-start' arrow>
+    <ErrorTooltip title={error} placement='top-start' arrow>
       {!options ? (
-        <input
-          className={!error ? style.FormInput : style.FormInput__Error}
-          type={type}
-          placeholder={placeholder}
-          name={name}
-          onChange={onChange}
-          onBlur={onBlur}
-          value={value}
-        />
+        <input className={!error ? style.FormInput : style.FormInput__Error} {...props} />
       ) : (
         <select
           className={!error ? style.FormInput : style.FormInput__Error}
-          placeholder='Gênero'
           name='gender'
-          onChange={onChange}
-          onBlur={onBlur}
-          value={value}
+          {...props}
         >
           {options.map((option, index) => {
             return (
@@ -57,7 +37,7 @@ const FormInput = ({
           })}
         </select>
       )}
-    </Tooltip>
+    </ErrorTooltip>
   );
 };
 
