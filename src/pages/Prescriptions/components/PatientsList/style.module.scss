@@ -1,0 +1,12 @@
+@import '../../../../exports.module';
+
+.emptyResult {
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  text-align: center;
+
+  color: var(--warning);
+
+  margin: 0 0 2.5rem;
+}

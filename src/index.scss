@@ -1,0 +1,24 @@
+.defaultReset {
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+html{
+  @extend .defaultReset;
+  font-size: 62.5%;
+}
+
+body {
+  @extend .defaultReset;
+  font-size: 1.6rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}

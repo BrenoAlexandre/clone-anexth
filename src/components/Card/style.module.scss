@@ -1,0 +1,15 @@
+@import '../../exports.module';
+
+.Card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0.2rem;
+  padding: 3.2rem 6.4rem;
+  gap: 1.6rem;
+
+  border-radius: 0.4rem;
+  box-shadow: 0.2rem 0.4rem 2.2rem 0.4rem var(--light-shadow);
+}

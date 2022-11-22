@@ -1,0 +1,67 @@
+@import '../../exports.module';
+
+.header {
+  width: 100%;
+
+  padding: 1.5rem 16.3rem 1.5rem 17.5rem;
+
+  background: var(--background-color);
+
+  box-shadow: 2px 4px 22px 4px var(--light-shadow);
+  border-radius: 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: sticky;
+}
+
+.actions {
+  &__links {
+    min-height: 100%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    padding: 0;
+    gap: 4rem;
+  }
+
+  &__link {
+    border: 0.8rem 0 solid transparent;
+
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    color: var(--secondary-color);
+  }
+
+  &__selected {
+    @extend .actions__link;
+
+    // border-top: 0.8rem solid var(--primary-color);
+    // border-bottom: 0.8rem solid transparent;
+
+    border-top: 0.2rem solid transparent;
+    border-bottom: 0.2rem solid var(--primary-color);
+    color: var(--active-link-color);
+  }
+
+  &__profile {
+    display: flex;
+    align-items: center;
+
+    padding: 0.8rem 1.6rem;
+    gap: 2.4rem;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+
+    color: var(--secondary-color);
+
+    border-left: 0.1rem solid var(--light-grey);
+  }
+}

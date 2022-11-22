@@ -1,0 +1,145 @@
+@import '../../exports.module';
+
+.headerContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  h2 {
+    font-weight: 500;
+    font-size: 2.2rem;
+    line-height: 1.6rem;
+  }
+
+  span {
+    max-width: 56.1rem;
+
+    font-weight: 300;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+    word-break: break-all;
+
+    margin: 0 0 1.6rem;
+  }
+
+  &__action {
+    height: 3.2rem;
+    max-width: 44.4rem;
+
+    display: flex;
+    justify-content: space-between;
+
+    filter: drop-shadow(0.2rem 0.2rem 0.6rem var(--light-shadow));
+
+    input {
+      height: 100%;
+      width: 35.1rem;
+
+      padding: 0 1.6rem;
+
+      background: var(--background-color);
+
+      outline: 0;
+      box-sizing: border-box;
+      border: 0.1rem solid var(--secondary-color);
+      border-radius: 0.4rem;
+    }
+
+    button {
+      height: 100%;
+      width: 8.6rem;
+
+      margin: 0 0 0 0.7rem;
+      padding: 0.4rem 3.1rem;
+      gap: 1rem;
+
+      width: 8.6rem;
+      height: 3.2rem;
+
+      background: var(--darker-primary);
+      color: var(--background-color);
+
+      border: none;
+      border-radius: 0.4rem;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &:active {
+        background: var(--dark-primary);
+        transform: scale(0.98);
+      }
+    }
+  }
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.7rem 0 14rem;
+
+  .cardTitle {
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 1.6rem;
+
+    margin: 0;
+
+    text-align: center;
+    text-transform: uppercase;
+
+    color: var(--primary-color);
+  }
+
+  .cardDescription {
+    max-width: 34.3rem;
+
+    font-weight: 300;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+    text-align: center;
+
+    color: var(--primary-grey);
+  }
+
+  form {
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    gap: 1.6rem;
+
+    .selectorWrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    button {
+      width: 50%;
+      padding: 0.8rem 3.2rem;
+
+      align-self: center;
+
+      color: var(--background-color);
+      background: var(--light-secondary);
+
+      border: none;
+      box-shadow: 2px 2px 6px var(--light-shadow);
+      border-radius: 3px;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &:active {
+        transform: scale(0.98);
+      }
+    }
+  }
+}
