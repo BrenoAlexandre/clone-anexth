@@ -16,7 +16,7 @@ const links = [
   { title: 'Fale Conosco', about: 'Fale Conosco', href: '/', selected: false },
 ];
 
-const Layout: React.FunctionComponent = () => {
+const Header: React.FunctionComponent = () => {
   const [isDrawerOpen, toggleDrawer] = useState<boolean>(false);
   const openDrawer = () => toggleDrawer(true);
   const closeDrawer = () => toggleDrawer(false);
@@ -43,12 +43,7 @@ const Layout: React.FunctionComponent = () => {
           <div className={style.drawerIcon__links}>
             {links.map((link, index) => {
               return (
-                <a
-                  key={index + 1 * Math.random()}
-                  title={link.about}
-                  // className={style[`actions__${!link.selected ? 'link' : 'selected'}`]}
-                  href={link.href}
-                >
+                <a key={index + 1 * Math.random()} title={link.about} href={link.href}>
                   {link.title}
                 </a>
               );
@@ -64,4 +59,4 @@ const Layout: React.FunctionComponent = () => {
   );
 };
 
-export default Layout;
+export default Header;
