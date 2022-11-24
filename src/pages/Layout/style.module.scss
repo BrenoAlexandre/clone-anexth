@@ -2,8 +2,8 @@
 
 .header {
   width: 100%;
-
-  padding: 1.5rem 16.3rem 1.5rem 17.5rem;
+  height: 92px;
+  max-height: 92px;
 
   background: var(--background-color);
 
@@ -11,15 +11,21 @@
   border-radius: 0;
 
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 
   position: sticky;
+
+  @media (max-width: 819px) {
+    padding: 0 1% 0 2%;
+
+    justify-content: space-between;
+  }
 }
 
 .actions {
   &__links {
-    min-height: 100%;
+    height: 100%;
 
     display: flex;
     flex-direction: row;
@@ -30,22 +36,30 @@
   }
 
   &__link {
+    height: inherit;
+
+    display: flex;
+    align-items: center;
+
     border: 0.8rem 0 solid transparent;
 
     font-weight: 400;
     font-size: 1.4rem;
     line-height: 2rem;
+
     color: var(--secondary-color);
+
+    @media (max-width: 709px) {
+      display: none;
+    }
   }
 
   &__selected {
     @extend .actions__link;
 
-    // border-top: 0.8rem solid var(--primary-color);
-    // border-bottom: 0.8rem solid transparent;
+    border-top: 0.8rem solid var(--primary-color);
+    border-bottom: 0.8rem solid transparent;
 
-    border-top: 0.2rem solid transparent;
-    border-bottom: 0.2rem solid var(--primary-color);
     color: var(--active-link-color);
   }
 
@@ -63,5 +77,37 @@
     color: var(--secondary-color);
 
     border-left: 0.1rem solid var(--light-grey);
+
+    @media (max-width: 819px) {
+      justify-content: center;
+      span {
+        display: none;
+      }
+    }
+  }
+}
+
+.drawerIcon {
+  display: none !important;
+
+  color: var(--secondary-color);
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  @media (max-width: 709px) {
+    display: block !important;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 2rem;
+
+    gap: 1rem 0;
   }
 }

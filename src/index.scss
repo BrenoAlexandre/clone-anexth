@@ -4,7 +4,7 @@
   font-family: 'Roboto', sans-serif;
 }
 
-html{
+html {
   @extend .defaultReset;
   font-size: 62.5%;
 }
@@ -21,4 +21,20 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+button {
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  &:disabled {
+    &:hover {
+      cursor: default;
+    }
+  }
 }

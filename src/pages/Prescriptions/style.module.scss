@@ -19,7 +19,7 @@
     font-weight: 300;
     font-size: 1.6rem;
     line-height: 1.9rem;
-    word-break: break-all;
+    word-break: keep-all;
 
     margin: 0 0 1.6rem;
   }
@@ -27,6 +27,7 @@
   &__action {
     height: 3.2rem;
     max-width: 44.4rem;
+    width: 100%;
 
     display: flex;
     justify-content: space-between;
@@ -35,7 +36,8 @@
 
     input {
       height: 100%;
-      width: 35.1rem;
+      max-width: 35.1rem;
+      width: 100%;
 
       padding: 0 1.6rem;
 
@@ -64,13 +66,8 @@
       border: none;
       border-radius: 0.4rem;
 
-      &:hover {
-        cursor: pointer;
-      }
-
       &:active {
         background: var(--dark-primary);
-        transform: scale(0.98);
       }
     }
   }

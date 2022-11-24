@@ -52,7 +52,17 @@
 
     padding: 1rem 4.8rem;
 
-    h3 {
+    .modalTitle {
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 19px;
+      text-align: center;
+      text-transform: uppercase;
+
+      color: var(--primary-grey);
+    }
+
+    .modalDescription {
       font-weight: 500;
       font-size: 1.6rem;
       line-height: 1.9rem;
@@ -121,36 +131,6 @@
       color: var(--primary-grey);
     }
 
-    button {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      padding: 1.5rem 3.2rem;
-
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 16px;
-      text-align: center;
-      text-transform: uppercase;
-
-      color: var(--background-color);
-      background: var(--primary-color);
-
-      border: none;
-      border-radius: 0.3rem;
-
-      box-shadow: 2px 2px 6px var(--light-shadow);
-
-      &:hover {
-        cursor: pointer;
-      }
-
-      &:action {
-        transform: scale(0.98);
-        background: var(--dark-primary);
-      }
-    }
-
     .editInfo {
       width: fit-content;
       font-weight: 400;
@@ -166,6 +146,36 @@
       &:hover {
         cursor: pointer;
       }
+    }
+  }
+  .action {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    margin: 3rem 0 0;
+    padding: 0.8rem 3.2rem;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+
+    color: var(--background-color);
+    background: var(--primary-color);
+
+    border: none;
+    border-radius: 0.3rem;
+
+    box-shadow: 2px 2px 6px var(--light-shadow);
+
+    &:active {
+      background: var(--dark-primary);
+    }
+
+    &:disabled {
+      background: var(--dark-primary);
     }
   }
 }

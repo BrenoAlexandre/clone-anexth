@@ -1,34 +1,34 @@
 import React, { useState } from 'react';
-import ScreenHeader from '../../components/ScreenHeader';
-import { PatientService } from '../../services/patients.service';
-import SearchButton from './components/SearchButton';
+import LoaderButton from './components/LoaderButton';
 import style from './style.module.scss';
 import PatientsList from './components/PatientsList';
-import IPatient from '../../interfaces/IPatient';
 import InvitationCard from './components/InvitationCard';
-
-interface ILoadingParams {
-  findPatient: boolean;
-  sendInvitation: boolean;
-}
+import { PatientService } from '../../services/patients.service';
+import ScreenHeader from '../../components/ScreenHeader';
+import IPatient from '../../interfaces/IPatient';
+import busca from '../../assets/busca.svg';
 
 const Prescription: React.FunctionComponent = () => {
+  const patientService = new PatientService();
   const [patients, setPatients] = useState<IPatient[] | undefined>(undefined);
-  const [isLoading, setIsLoading] = useState<ILoadingParams>({
-    findPatient: false,
-    sendInvitation: false,
-  });
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const findPatients = async ({
     currentTarget,
   }: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    setIsLoading({ ...isLoading, findPatient: true });
+    try {
+      setIsLoading(true);
 
-    const { value } = currentTarget;
-    const result = await new PatientService().searchPatientsForPrescription(value);
-    setPatients(result);
+      const { value } = currentTarget;
+      const result = await patientService.searchPatientsForPrescription(value);
+      setPatients(result);
 
-    setIsLoading({ ...isLoading, findPatient: false });
+      setIsLoading(false);
+    } catch (error) {
+      alert(`findPatientsError :>> ${error}`);
+      //! Toast
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -42,7 +42,9 @@ const Prescription: React.FunctionComponent = () => {
           </span>
           <div className={style.headerContent__action}>
             <input id='screenHeaderActionInput' type='text' />
-            <SearchButton actionFn={findPatients} loading={isLoading.findPatient} />
+            <LoaderButton onClick={findPatients} loading={isLoading}>
+              <img src={busca} alt='Buscar' />
+            </LoaderButton>
           </div>
         </div>
       </ScreenHeader>

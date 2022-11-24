@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './style.module.scss';
-import ErrorTooltip from '../../../../components/ErrorToolTip';
+import ErrorTooltip from '../../../../components/ErrorTooltip';
 
 interface IProps {
   error: string | null;
