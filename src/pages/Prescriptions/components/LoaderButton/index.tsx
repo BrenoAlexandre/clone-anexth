@@ -1,4 +1,4 @@
-import { Ring } from '@uiball/loaders';
+import { LoaderSpinner } from '../../../../components/LoaderSpinner';
 
 interface IProps {
   onClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => any;
@@ -10,7 +10,7 @@ interface IProps {
 const SearchButton = ({ onClick, loading, children, ...props }: IProps) => {
   return (
     <button type='button' onClick={onClick} {...props} disabled={loading}>
-      {!loading ? children : <Ring size={16} lineWeight={5} speed={1} color='#ffffff' />}
+      {!loading ? children : <LoaderSpinner />}
     </button>
   );
 };

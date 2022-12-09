@@ -1,0 +1,24 @@
+.headerContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  h2 {
+    font-weight: 500;
+    font-size: 2.2rem;
+    line-height: 1.6rem;
+  }
+
+  span {
+    max-width: 56.1rem;
+
+    font-weight: 300;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+    word-break: keep-all;
+
+    margin: 0 0 1.6rem;
+  }
+}

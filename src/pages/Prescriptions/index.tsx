@@ -8,7 +8,7 @@ import ScreenHeader from '../../components/ScreenHeader';
 import IPatient from '../../interfaces/IPatient';
 import busca from '../../assets/busca.svg';
 
-const Prescription: React.FunctionComponent = () => {
+const Prescriptions: React.FunctionComponent = () => {
   const patientService = new PatientService();
   const [patients, setPatients] = useState<IPatient[] | undefined>(undefined);
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -58,4 +58,4 @@ const Prescription: React.FunctionComponent = () => {
   );
 };
 
-export default Prescription;
+export default Prescriptions;
